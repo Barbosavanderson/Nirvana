@@ -16,6 +16,7 @@ class RegistroFocoInput(BaseModel):
     
     categoria: Optional[CategoriaEnum] = Field(None, description="Categoria do registro")
     tags: Optional[list[str]] = []
+    
 
 class RegistroFocoOutput(RegistroFocoInput):
     id: int = Field(..., description="ID do registro")
