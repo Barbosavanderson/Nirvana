@@ -1,4 +1,4 @@
-from app.database.storage import registros
+from app.database.storage import get_connection
 
 def gerar_feedback(media):
     if media < 2:
@@ -13,12 +13,17 @@ def gerar_feedback(media):
         return "I'm so happy 'cause today i found my friend, he's in my head"
     
 def gerar_diagnostico():
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM registros')
+    registros = cursor.fetchall()
+    conn.close()
     if not registros:
         return{
             "total_registros": 0,
             "media_foco": 0,
             "tempo_total_minutos": 0,
-            "mensagem_feedback": "Nenhum registro encontrado. Por favor, adicione registros para obter um diagnóstico.",
+            "mensagem_feedback": "Nenhum registro encontrado. Vai começar a estudar ou vai ficar no insta?!?!?",
             "distribuicao_foco": {}
         }
     
@@ -34,7 +39,7 @@ def gerar_diagnostico():
         )
 
     return {
-         "total_registros": total,
+        "total_registros": total,
         "media_foco": round(media, 2),
         "tempo_total_minutos": tempo_total,
         "mensagem_feedback": gerar_feedback(media),
