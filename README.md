@@ -122,6 +122,8 @@ A funcao principal de paginacao esta em `app/database/storage.py` com o nome `pa
 - **ChatGPT (Gepeto)** → Apoio na codificação *(conforme arquivo `Conversas_Arquitetura_Focus`)* 
 
 - **Copilot** → Suporte para dúvidas e debugging
+- 
+- # Trabalho executado por oliveira,  para mais soluções entre em contato.
 - <p align="center">
   <img src="img/Oliveira(1).jpeg" alt=" logo" width="500"/>
 </p>
