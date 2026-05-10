@@ -22,3 +22,26 @@ def criar_tabela():
     ''')
     conn.commit()
     conn.close()
+
+def paginacao_registros(pagina: int = 1, tamanho: int = 10):
+    conn = get_connection()
+    cursor = conn.cursor()
+    offset = (pagina - 1) * tamanho
+    cursor.execute("SELECT COUNT(*) as total FROM registros")
+    total = cursor.fetchone()['total']
+    cursor.execute(
+    """
+    SELECT * FROM registros
+    ORDER BY criado_em DESC
+    LIMIT ? OFFSET ?
+    """,
+    (tamanho, offset)
+    )
+
+    registros = cursor.fetchall()
+    conn.close()
+
+    return [dict(registro) for registro in registros]
+
+paginacao_registro = paginacao_registros
+paginacao_registros_service = paginacao_registros

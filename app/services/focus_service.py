@@ -1,5 +1,5 @@
 from datetime import datetime
-from app.database.storage import get_connection
+from app.database.storage import get_connection, paginacao_registros
 
 
 def criar_registro(dados):
@@ -36,3 +36,7 @@ def criar_registro(dados):
         "tags": dados.tags,
         "criado_em": criado_em
     }
+
+
+def listar_registros_service(pagina: int, tamanho: int):
+    return paginacao_registros(pagina, tamanho)
