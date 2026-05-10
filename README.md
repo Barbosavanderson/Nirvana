@@ -1,4 +1,7 @@
-![nirvana.png]
+<p align="center">
+  <img src="img/nivana.png" alt="Logo Nirvana" width="500"/>
+</p>
+
 # Nirvana
 
 Como passamos pelo desafio de entender nosso aprendizado — estamos sendo eficazes? Faz sentido todas essas horas de dedicação?  
@@ -119,3 +122,8 @@ A funcao principal de paginacao esta em `app/database/storage.py` com o nome `pa
 - **ChatGPT (Gepeto)** → Apoio na codificação *(conforme arquivo `Conversas_Arquitetura_Focus`)* 
 
 - **Copilot** → Suporte para dúvidas e debugging
+- <p align="center">
+  <img src="img/Oliveira(1).jpeg" alt=" logo" width="500"/>
+</p>
+
+- 
